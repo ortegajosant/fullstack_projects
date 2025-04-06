@@ -5,30 +5,30 @@ class Bus:
 
     def add_passenger(self, person):
         if person in self.passengers:
-            print(f"{person.name} ya está en el bus.")
+            print(f"{person.name} is already on the bus.")
             return
         if len(self.passengers) < self.max_passengers:
             self.passengers.append(person)
-            print(f"{person.name} ha subido al bus.")
+            print(f"{person.name} has boarded the bus.")
         else:
-            print("El bus está lleno. No se pueden agregar más pasajeros.")
+            print("The bus is full. No more passengers can be added.")
 
     def remove_passenger(self, person):
         if person in self.passengers:
             self.passengers.remove(person)
-            print(f"{person.name} ha bajado del bus.")
+            print(f"{person.name} has left the bus.")
         else:
-            print(f"{person.name} no está en el bus.")
+            print(f"{person.name} is not on the bus.")
 
 
-# Ejemplo de clase Person para referencia:
+# Example of a Person class for reference:
 class Person:
     def __init__(self, name):
         self.name = name
 
 
 def main():
-    # Crear una instancia de Bus con un máximo de 3 pasajeros
+    # Create an instance of Bus with a maximum of 3 passengers
     bus = Bus(max_passengers=3)
 
     # Crear algunas instancias de Person
@@ -37,18 +37,18 @@ def main():
     person3 = Person(name="Carlos")
     person4 = Person(name="Ana")
 
-    # Agregar pasajeros al bus
+    # Add passengers to the bus
     bus.add_passenger(person1)
     bus.add_passenger(person2)
     bus.add_passenger(person3)
 
-    # Intentar agregar un pasajero adicional
+    # Try to add an additional passenger
     bus.add_passenger(person4)
 
-    # Remover un pasajero del bus
+    # Remove a passenger from the bus
     bus.remove_passenger(person2)
 
-    # Intentar remover un pasajero que no está en el bus
+    # Try to remove a passenger who is not on the bus
     bus.remove_passenger(person4)
 
 
