@@ -1,6 +1,14 @@
 class BankAccount:
+    INSUFFICIENT_FUNDS_MSG = "Insufficient funds."
+    WITHDRAWAL_AMOUNT_MSG = "Withdrawal amount must be positive."
+
     def __init__(self, balance=0):
         self.balance = balance
+
+    def __validate_balance(self, new_balance, actual_balance, msg):
+        if new_balance > actual_balance:
+            raise ValueError(msg)
+        return True
 
     def deposit(self, amount):
         if amount > 0:
@@ -8,32 +16,32 @@ class BankAccount:
         else:
             raise ValueError("Deposit amount must be positive.")
 
+    def is_amount_positive(self, amount):
+        return amount > 0
+
     def withdraw(self, amount):
         if amount > 0:
-            if amount <= self.balance:
-                self.balance -= amount
-                return amount
-            else:
-                raise ValueError("Insufficient funds.")
-        else:
-            raise ValueError("Withdrawal amount must be positive.")
+            self.__validate_balance(amount, self.balance, self.INSUFFICIENT_FUNDS_MSG)
+            self.balance -= amount
+            return amount
+        raise ValueError(self.WITHDRAWAL_AMOUNT_MSG)
 
 
 class SavingsAccount(BankAccount):
+    MIN_FOUNDS_MSG = "Insufficient funds. Minimum balance required."
+
     def __init__(self, balance=0, min_balance=0):
         super().__init__(balance)
         self.min_balance = min_balance
 
     def withdraw(self, amount):
-        if amount > 0:
+        if self.is_amount_positive(amount):
             new_balance = self.balance - amount
-            if new_balance >= self.min_balance:
-                self.balance = new_balance
-                return amount
-            else:
-                raise ValueError("Withdrawal would put balance below minimum balance.")
-        else:
-            raise ValueError("Withdrawal amount must be positive.")
+            self.__validate_balance(self.min_balance, new_balance, self.MIN_FOUNDS_MSG)
+            self.__validate_balance(new_balance)
+            self.balance = new_balance
+            return amount
+        raise ValueError(self.WITHDRAWAL_AMOUNT_MSG)
 
 
 def main():
@@ -64,7 +72,7 @@ def main():
         print(f"Balance after withdrawal of 200: {savings.balance}")
     except ValueError as e:
         print(f"Error: {e}")
-    
+
     print(f"Try to withdraw: 300")
     try:
         savings.withdraw(300)
