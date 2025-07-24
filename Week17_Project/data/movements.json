@@ -1,0 +1,20 @@
+[
+    {
+        "category": "Food",
+        "title": "Lunch",
+        "type": "expense",
+        "amount": 50
+    },
+    {
+        "category": "Transport",
+        "title": "Taxi",
+        "type": "expense",
+        "amount": 20
+    },
+    {
+        "category": "Salary",
+        "title": "Salario Mensual",
+        "type": "income",
+        "amount": 2000
+    }
+]
