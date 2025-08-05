@@ -1,20 +1,32 @@
 [
     {
-        "category": "Food",
         "title": "Lunch",
-        "type": "expense",
-        "amount": 50
+        "amount": 50,
+        "category": "Food",
+        "type": "expense"
     },
     {
-        "category": "Transport",
         "title": "Taxi",
-        "type": "expense",
-        "amount": 20
+        "amount": 20,
+        "category": "Transport",
+        "type": "expense"
     },
     {
-        "category": "Salary",
         "title": "Salario Mensual",
-        "type": "income",
-        "amount": 2000
+        "amount": 2000,
+        "category": "Salary",
+        "type": "income"
+    },
+    {
+        "title": "Semester",
+        "amount": 200000.0,
+        "category": "Education",
+        "type": "Expense"
+    },
+    {
+        "title": "Salary June",
+        "amount": 25500000.0,
+        "category": "Utilities",
+        "type": "Income"
     }
 ]

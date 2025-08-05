@@ -1,5 +1,5 @@
 import FreeSimpleGUI as sg
-from logic.finance_handler import FinanceHandler
+from src.entities.FinanceHandler import FinanceHandler
 
 TITLE_KEY = "title"
 AMOUNT_KEY = "amount"

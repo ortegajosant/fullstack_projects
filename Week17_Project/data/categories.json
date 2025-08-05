@@ -1,12 +1,13 @@
 {
     "categories": [
-        "Food",
-        "Transport",
-        "Entertainment",
         "Health",
         "Education",
-        "Utilities",
+        "Housing",
+        "Transport",
+        "Food",
         "Clothing",
-        "Housing"
+        "Entertainment",
+        "Utilities",
+        "Work"
     ]
 }

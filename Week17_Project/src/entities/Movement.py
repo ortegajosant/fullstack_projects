@@ -9,5 +9,13 @@ class Movement:
         self.title = title
         self.type = type
 
-    def get_movement_info(self):
+    def to_list(self):
         return [self.title, self.amount, self.category, self.type]
+
+    def to_dict(self):
+        return {
+            "title": self.title,
+            "amount": self.amount,
+            "category": self.category,
+            "type": self.type,
+        }
