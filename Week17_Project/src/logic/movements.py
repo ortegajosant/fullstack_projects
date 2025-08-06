@@ -6,7 +6,7 @@ MOVEMENTS_FILE = "movements.json"
 
 
 def validate_new_movement(title, amount, category):
-    if not title or not amount or not category:
+    if not title.strip() or not amount.strip() or not category.strip():
         raise ValueError("All fields are required.")
     elif not amount.replace(".", "", 1).isdigit():
         raise ValueError("Amount must be a valid number.")

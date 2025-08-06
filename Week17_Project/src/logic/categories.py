@@ -7,6 +7,7 @@ CATEGORIES_KEY = "categories"
 
 
 def validate_category(category, categories):
+    category = category.strip()
     if not category:
         raise ValueError("Category cannot be empty.")
     elif category in categories:
