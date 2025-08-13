@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Lunch",
+        "amount": 50,
+        "category": "Food",
+        "type": "expense"
+    },
+    {
+        "title": "Taxi",
+        "amount": 20,
+        "category": "Transport",
+        "type": "expense"
+    },
+    {
+        "title": "Salario Mensual",
+        "amount": 2000,
+        "category": "Salary",
+        "type": "income"
+    },
+    {
+        "title": "Semester",
+        "amount": 200000.0,
+        "category": "Education",
+        "type": "Expense"
+    },
+    {
+        "title": "Salary June",
+        "amount": 25500000.0,
+        "category": "Utilities",
+        "type": "Income"
+    }
+]
